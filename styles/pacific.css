@@ -1,35 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #fff;
+  background-color: #eaeaea;
   color: #666;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#wrapper {
+  background-color: #90c7e3;
+  background-image: linear-gradient(to bottom, #FFF, #90c7e3);
+  background-repeat: no-repeat;
 }
 
 header {
   background-color: #002171;
   color: #fff;
-  background-image: url(images/sunset.jpg);
-  background-position: right;
-  background-repeat: no-repeat;
-  line-height: 400%;
   text-indent: 1em;
 }
 
-h1 {
-  margin-bottom: 0;
-  font-family: Georgia, 'Times New Roman', serif;
+header a {
+  text-decoration: none;
+}
+
+header a:link {
+  color: #fff;
+}
+
+header a:visited {
+  color: #fff;
+}
+
+header a:hover {
+  color: #90c7e3;
 }
 
 nav {
-  background-color: #bbdefb;
+  text-align: center;
+  margin-top: 0;
+  padding: 0.5em 0 0.5em 0;
+  font-size: 120%;
   font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  font-size: 1.2em;
 }
 
 nav a {
   text-decoration: none;
 }
 
+nav a:link {
+  color: #5c7fa3;
+}
+
+nav a:visited {
+  color: #344873;
+}
+
+nav a:hover {
+  color: #a52a2a;
+}
+
+main {
+  padding: 1px 20px 20px 20px;
+  display: block;
+  background-color: #fff;
+  /* margin-left: 190px; */
+  padding-left: 30px;
+  overflow: auto;
+}
+
+section {
+  float: left;
+  width: 33%;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+h1 {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 0.25em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-size: 1.5em;
+}
+
 h2 {
   color: #1976D2;
   font-family: Georgia, 'Times New Roman', serif;
+  text-shadow: 1px 1px 1px #ccc;
 }
 
 h3 {
@@ -37,8 +104,8 @@ h3 {
   font-family: Georgia, 'Times New Roman', serif;
 }
 
-ul {
-  list-style-image: url(images/marker.gif);
+main ul {
+  list-style-image: url(../images/marker.gif);
 }
 
 dt {
@@ -59,4 +126,110 @@ footer {
   font-style: italic;
   text-align: center;
   font-family: Georgia, 'Times New Roman', serif;
+  padding: 2em;
+  /* margin-left: 190px; */
+  background-color: #fff;
+}
+
+.hero {
+  /* margin-left: 190px; */
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.hero.home {
+  background-image: url(../images/coasthero.jpg);
+}
+
+.hero.yurts {
+  background-image: url(../images/yurtshero.jpg);
+}
+
+.hero.activities {
+  background-image: url(../images/trailhero.jpg);
+}
+
+@media (min-width: 600px) {
+  nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+
+  nav li {
+    border-bottom: none;
+  }
+
+  section {
+    padding-left: 2em;
+    padding-right: 2em;
+    grid-row: 2 / 3;
+    grid-column: auto;
+  }
+
+  .content main {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 5;
+  }
+
+  footer,
+  #special {
+    grid-row: auto;
+    grid-column: 1 / 5;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav {
+    text-align: left;
+    padding-left: 1em;
+    grid-row: 2 / 5;
+    grid-column: 1 / 2;
+  }
+
+  nav ul {
+    flex-flow: column;
+    padding-top: 1em;
+  }
+
+  #wrapper {
+    margin: auto;
+    width: 80%;
+    border: 1px solid #003;
+    box-shadow: 1px 1px #003;
+    display: grid;
+    grid-template-columns: 180px auto;
+    grid-template-rows: auto;
+  }
+
+  header {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
+
+  div {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+
+  main {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+  }
+
+  footer {
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
+  }
 }
