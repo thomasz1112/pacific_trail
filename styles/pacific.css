@@ -176,6 +176,16 @@ tr:nth-of-type(odd) {
   background-color: #f5fafc;
 }
 
+form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+input,
+textarea {
+  margin-bottom: .5em;
+}
+
 @media (min-width: 600px) {
   nav ul {
     display: flex;
@@ -213,6 +223,20 @@ tr:nth-of-type(odd) {
   #special {
     grid-row: auto;
     grid-column: 1 / 5;
+  }
+
+  form {
+    display: grid;
+    grid-gap: 1em;
+    gap: 1em;
+    grid-template-columns: 6em 1fr;
+    grid-template-rows: auto;
+    width: 60%;
+  }
+
+  input[type="submit"] {
+    grid-column: 2 / 3;
+    width: 9em;
   }
 }
 
